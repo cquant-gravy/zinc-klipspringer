@@ -7,7 +7,7 @@ branches:
   only:
     - master
 before_script:
-  - npm install -g @angular/cli
+  - yarn add @angular/cli @angular/core
 
 script:
-  - npm run package
+  - yarn package
