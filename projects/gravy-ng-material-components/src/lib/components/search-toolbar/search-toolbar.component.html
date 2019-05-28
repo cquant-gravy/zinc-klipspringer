@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" [fxShow]="!showSearch" #mainToolbar>
+  <div>
+    <span class="barTitle">{{ barTitle }}</span>
+  </div>
+  <span fxFlex></span>
+  <div>
+    <ng-content></ng-content>
+  </div>
+  <span fxFlex></span>
+  <button mat-icon-button
+          style="cursor: pointer;"
+          aria-label="Search"
+          (click)="showSearch = !showSearch">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-toolbar [fxShow]="showSearch" style="background-color: #6c59a4;" #searchToolbar>
+  <mat-form-field class="full-width white-form">
+    <!--<mat-label>{{ placeholder }}</mat-label>-->
+    <label>
+      <input matInput placeholder="{{ placeholder }}"
+             (keyup)="searchEvent($event.target.value)"
+             (focus)="handlePlaceholder()"
+             (blur)="handlePlaceholder()"
+             style="color: #ffffff"
+             autocomplete="off"
+             #searchInput>
+    </label>
+  </mat-form-field>
+  <span fxFlex></span>
+  <button mat-icon-button
+          style="cursor: pointer; background-color: white;"
+          aria-label="clear"
+          (click)="clearClicked()">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+

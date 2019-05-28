@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "gravy-ng-material-components": [
+        "dist/gravy-ng-material-components"
+      ],
+      "gravy-ng-material-components/*": [
+        "dist/gravy-ng-material-components/*"
+      ]
+    }
   }
 }
